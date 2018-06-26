@@ -14,6 +14,9 @@ TexCmd="
     uplatex ${TexFile}.tex &&\
     uplatex ${TexFile}.tex &&\
     dvipdfmx ${TexFile}"
+TexCmd="
+    uplatex ${TexFile}.tex &&\
+    dvipdfmx ${TexFile}"
 
 docker run \
     --rm -it \
