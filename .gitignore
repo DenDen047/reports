@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/latex,macos,windows
+# Created by https://www.gitignore.io/api/latex,macos,windows,microsoftoffice
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
@@ -278,6 +278,24 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### MicrosoftOffice ###
+*.tmp
+
+# Word temporary
+~$*.doc*
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -304,4 +322,4 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/latex,macos,windows
+# End of https://www.gitignore.io/api/latex,macos,windows,microsoftoffice
