@@ -8,15 +8,19 @@ fi
 cd $1
 
 TexFile="paper"
+# === uplatex ===
+# TexCmd="
+#     uplatex ${TexFile}.tex &&\
+#     pbibtex ${TexFile} &&\
+#     uplatex ${TexFile}.tex &&\
+#     uplatex ${TexFile}.tex &&\
+#     dvipdfmx ${TexFile}"
+# === pdflatex ===
 TexCmd="
-    uplatex ${TexFile}.tex &&\
-    pbibtex ${TexFile} &&\
-    uplatex ${TexFile}.tex &&\
-    uplatex ${TexFile}.tex &&\
-    dvipdfmx ${TexFile}"
-TexCmd="
-    uplatex ${TexFile}.tex &&\
-    dvipdfmx ${TexFile}"
+    pdflatex ${TexFile}.tex &&\
+    bibtex ${TexFile} &&\
+    pdflatex ${TexFile}.tex &&\
+    pdflatex ${TexFile}.tex"
 
 docker run \
     --rm -it \
