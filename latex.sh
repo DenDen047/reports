@@ -6,6 +6,7 @@ if [ $# -ne 1 ]; then
 fi
 
 cd $1
+pwd
 
 TexFile="paper"
 # === uplatex ===
@@ -17,15 +18,16 @@ TexFile="paper"
 #     dvipdfmx ${TexFile}"
 # === pdflatex ===
 TexCmd="
-    pdflatex ${TexFile}.tex &&\
-    bibtex ${TexFile} &&\
-    pdflatex ${TexFile}.tex &&\
-    pdflatex ${TexFile}.tex"
+    pdflatex ./${TexFile}.tex &&\
+    bibtex ./${TexFile} &&\
+    pdflatex ./${TexFile}.tex &&\
+    pdflatex ./${TexFile}.tex"
 
 docker run \
     --rm -it \
     --user="$(id -u):$(id -g)" \
     --net=none \
     -v="/${PWD}:/data" \
+    -w=/data \
     denden047/latex \
     /bin/bash -c "${TexCmd}"
