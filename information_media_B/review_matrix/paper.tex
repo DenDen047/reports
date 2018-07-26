@@ -1,0 +1,48 @@
+% upLaTeX文書
+% \documentclass[uplatex,a4paper]{jsarticle}
+\documentclass[pdflatex,ja=standard]{bxjsarticle}
+% デフォルトのフォント設定のまま!
+\usepackage{color}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\definecolor{myred}{rgb}{0.85,0,0.1}
+\definecolor{mypink}{rgb}{1,0.92,0.92}
+\setlength{\fboxsep}{2pt}
+
+
+\title{情報メディア演習B-2 授業レポート}
+\author{201821636 村松直哉}
+\date{\today}
+\begin{document}
+\maketitle
+%
+%
+\section{Related Work}
+
+本研究の目的は，汎用的なロボット制御システムを作ることである．
+
+1つのシステムにより，ロボットを制御するためには，「複数のエージェント（ロボット）で動くこと」と「現実空間でロボットを制御できること」が必要である．
+
+シミュレータ環境において，1つのロボットエージェントを制御する研究は多数ある．
+報酬関数を使わない方法として，\cite{Gupta}がある．
+事前にメタ学習を行い，エージェントを環境になれさせ，これによりその環境に対して支持されるタスクに対してより早く目標を達成できる．
+
+シミュレータ環境だけでなく，現実空間のロボットを強化学習により制御する手法も多く提案されている~\cite{Rusua,James,Levinea,Levine2016,Sadeghia,Kendall,Bousmalis,Ha}．
+ロボットの種類として，固定された1本のマニピュレータ~\cite{James,Sadeghia,Bousmalis}，2本のアームを使うロボット~\cite{Levine2016,Levinea}が利用されることが多い．
+移動ロボットしては，自動車を利用したもの~\cite{Kendall}や，サーボモータを使った多関節ロボットがある~\cite{Ha}．
+
+1つの学習済みシステムにより，複数のエージェントを制御する問題は，複数タスクを1つのネットワークで行うことと言える．
+これは，ニューラルネットワークの破滅的忘却のため，学習が困難なことが知られている．
+この問題を解決したシンプルな方法として，Progressive Neural Network~\cite{Rusu}が知られている．
+新しいタスクを学習をするたびに，ニューラルネットワークを大きくして行き，学習済みタスクのネットワークパラメータを固定した出力を，学習中タスクにも適用することで，多くを学習できる．
+\cite{Rusu}はAtariのゲームを使って，検証が行われた．
+
+このように，本研究が目標としている複数のロボットに対して，現実世界で制御を行うことを目的とした研究はない．
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
