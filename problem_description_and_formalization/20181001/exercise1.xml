@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="staff" type="StaffType" />
+
+<xsd:complexType name="StaffType">
+    <xsd:sequence>
+        <xsd:element name="name" type="xsd:string" />
+        <xsd:element name="name" type="xsd:string" />
+    </xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
+
