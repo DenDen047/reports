@@ -22,6 +22,8 @@ TexCmd="
     bibtex ./${TexFile} &&\
     pdflatex ./${TexFile}.tex &&\
     pdflatex ./${TexFile}.tex"
+TexCmd="
+    pdflatex ./${TexFile}.tex"
 
 docker run \
     --rm -it \
